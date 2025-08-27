@@ -125,12 +125,10 @@ body {
 
 .column img {
   width: 30px;
-  margin-right: 10px;
 }
 
 .humidity,
 .wind {
   font-size: 20px;
-  margin-top: -5px;
 }
 }
