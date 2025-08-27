@@ -1,15 +1,14 @@
 // ApiKey = ddcc8e1f7f025d45e354288d10477c26
-
-const apiKey = "ddcc8e1f7f025d45e354288d10477c26"; 
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const ApiKey = "ddcc8e1f7f025d45e354288d10477c26"; 
+const ApiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-async function checkWeather(city) {
+const checkWeather =  async (city)=>{
   try {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    const response = await fetch(ApiUrl + city + `&appid=${ApiKey}`);
 
     if (response.status === 404) {
       document.querySelector(".city").innerHTML = "City not found";
@@ -26,7 +25,6 @@ async function checkWeather(city) {
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
 
     // Change icon based on weather condition
     if (data.weather[0].main === "Clouds") {
@@ -45,12 +43,12 @@ async function checkWeather(city) {
   }
 }
 
-// Trigger search when clicked on button.
+// search when clicked on button.
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
 });
 
-// Trigger search when pressing Enter key.
+// search when pressing Enter key.
 searchBox.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     checkWeather(searchBox.value);

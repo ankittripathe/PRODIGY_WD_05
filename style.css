@@ -94,3 +94,43 @@ body {
   font-size: 28px;
   margin-top: -5px;
 }
+
+/* Media Quaries */
+/* For mobile devices (portrait & landscape) */
+@media only screen and (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .search input {
+    flex: unset; 
+    height: 55px;
+    width: 300px; 
+    font-size: 18px; 
+    padding: 6px 15px;
+  }
+
+  .search button {
+    width: 60px;
+    height: 50px;
+  }
+
+  .search button img {
+    width: 16px;
+  }
+
+  .details {
+  padding: 0 10px;
+}
+
+.column img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.humidity,
+.wind {
+  font-size: 20px;
+  margin-top: -5px;
+}
+}
